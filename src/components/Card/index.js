@@ -8,7 +8,7 @@ import moment from 'moment-timezone';
 import makeRequest from '../../utils/makeRequest';
 import { PATCH_EVENT } from '../../constants/apiEndPoints';
 import { useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 const Card = ({ eventData, index }) => {
   const navigate = useNavigate();
   const [isBookmark, setIsBookmark] = React.useState(eventData.isBookmarked);
@@ -59,5 +59,17 @@ const Card = ({ eventData, index }) => {
   );
 };
 
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  venue: PropTypes.string.isRequired,
+  datetime: PropTypes.string.isRequired,
+  timezone: PropTypes.string.isRequired,
+  areSeatsAvailable: PropTypes.bool.isRequired,
+  isRegistered: PropTypes.bool.isRequired,
+  isBookmarked: PropTypes.bool.isRequired,
+  imageUrl: PropTypes.string.isRequired
+};
 
 export default Card;
