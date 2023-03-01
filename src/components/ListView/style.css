@@ -1,0 +1,6 @@
+.list-view {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vh 20vw;
+  justify-content: space-between;
+}
