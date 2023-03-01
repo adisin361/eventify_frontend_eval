@@ -29,11 +29,11 @@ const SingleCardView = () => {
 
 
   const handleBookmark = async () => {
-    await makeRequest(PATCH_EVENT(singleCardData.id, {
+    await makeRequest(PATCH_EVENT(id), {
       data: {
         isBookmarked: !isBookmark
       }
-    }), navigate);
+    }, navigate);
     setIsBookmark(!isBookmark);
   };
 
@@ -66,8 +66,6 @@ const SingleCardView = () => {
             </div>
 
             {singleCardData.areSeatsAvailable && < button className='register-button'>{singleCardData.isRegistered ? 'REGISTER' : 'UNREGISTER'}</button>}
-
-
           </div>
         </div>
       </div>

@@ -16,11 +16,11 @@ const Card = ({ eventData, index }) => {
   const dateTime = time.tz(eventData.timezone).format("DD MMM YYYY HH:mm z");
 
   const handleBookmark = async () => {
-    await makeRequest(PATCH_EVENT(eventData.id, {
+    await makeRequest(PATCH_EVENT(eventData.id), {
       data: {
         isBookmarked: !isBookmark
       }
-    }), navigate);
+    }, navigate);
     setIsBookmark(!isBookmark);
   };
 
