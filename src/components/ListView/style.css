@@ -13,3 +13,62 @@
   align-items: center;
   font-size: xx-large;
 }
+
+.searchBar input {
+  height: 30px;
+  padding-left: 8px;
+  border-radius: 10px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-left {
+  width: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchBar {
+  width: 9vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters-body {
+  margin-top: 5vh;
+  margin-left: 20vw;
+  margin-right: 20vw
+}
+
+.radio-buttons-1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.radio-buttons-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-button-1 {
+  display: flex;
+}
+
+.radio-button-2 {
+  display: flex;
+}
+
+.radio-buttons-1 p {
+  margin-left: 5px
+}
+
+.radio-buttons-2 p {
+  margin-left: 5px
+}

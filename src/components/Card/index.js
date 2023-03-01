@@ -8,6 +8,7 @@ import moment from 'moment-timezone';
 import makeRequest from '../../utils/makeRequest';
 import { PATCH_EVENT } from '../../constants/apiEndPoints';
 import { useNavigate } from 'react-router-dom';
+
 const Card = ({ eventData, index }) => {
   const navigate = useNavigate();
   const [isBookmark, setIsBookmark] = React.useState(eventData.isBookmarked);
@@ -57,5 +58,6 @@ const Card = ({ eventData, index }) => {
     </>
   );
 };
+
 
 export default Card;

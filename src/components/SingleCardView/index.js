@@ -23,6 +23,7 @@ const SingleCardView = () => {
   }, []);
 
   const [isBookmark, setIsBookmark] = React.useState(singleCardData.isBookmarked);
+  const [isRegister, setIsRegister] = React.useState(singleCardData.isRegistered);
   // const time = moment(singleCardData.datetime);
   // eslint-disable-next-line quotes
   // const dateTimee = time.tz(singleCardData.timezone).format('DD MMM YYYY HH:mm z');
@@ -35,6 +36,15 @@ const SingleCardView = () => {
       }
     }, navigate);
     setIsBookmark(!isBookmark);
+  };
+
+  const handleRegister = async () => {
+    await makeRequest(PATCH_EVENT(id), {
+      data: {
+        isRegistered: !isRegister
+      }
+    }, navigate);
+    setIsRegister(!isRegister);
   };
 
   return (
@@ -64,8 +74,7 @@ const SingleCardView = () => {
               </div>
               <FontAwesomeIcon icon={faBookmark} size="2x" color={singleCardData.isBookmarked ? 'red' : 'white'} onClick={handleBookmark} />
             </div>
-
-            {singleCardData.areSeatsAvailable && < button className='register-button'>{singleCardData.isRegistered ? 'REGISTER' : 'UNREGISTER'}</button>}
+            {singleCardData.areSeatsAvailable && < button className='register-button' onClick={handleRegister}>{singleCardData.isRegistered ? 'REGISTER' : 'UNREGIESTER'}</button>}
           </div>
         </div>
       </div>
