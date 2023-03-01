@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Big+Shoulders+Text:wght@300&family=Poppins:wght@100;200;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Big+Shoulders+Text:wght@300&family=Poppins:wght@100;200;700;800&family=Sofia+Sans:wght@200;400&display=swap');
+
+.card {
+  height: 460px;
+  width: 380px;
+  background-color: black;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.card img {
+  width: 100%;
+  height: 46%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card p {
+  color: white;
+}
+
+.card-heading {
+  font-family: 'Big Shoulders Text';
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-meta-data {
+  padding: 15px
+}
+
+.card-description {
+  margin-bottom: 15px;
+}
+
+.card-venue {
+  margin-bottom: 5px
+}
+
+.card-meta-meta-data {
+  font-family: 'Sofia Sans';
+  font-weight: 400;
+}
+
+.card-date {
+  margin-bottom: 15px
+}
+
+.card-registration {
+  display: flex;
+  align-items: center;
+}
+
+.card-registration p {
+  margin-left: 7px;
+  color: #42f551;
+  font-weight: bolder;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-description {
+  height: 56px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
