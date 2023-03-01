@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Big+Shoulders+Text:wght@300&family=Poppins:wght@100;200;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Big+Shoulders+Text:wght@300&family=Poppins:wght@100;200;700;800&family=Sofia+Sans:wght@200;400&display=swap');
+
+.big-card-body {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-card {
+  height: 1000px;
+  width: 900px;
+  background-color: black;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.big-card img {
+  width: 100%;
+  height: 46%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.big-card p {
+  color: white;
+}
+
+.big-card-heading {
+  font-family: 'Big Shoulders Text';
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.big-card-meta-data {
+  font-size: 1.5rem;
+  padding: 30px
+}
+
+.big-card-description {
+  margin-bottom: 15px;
+}
+
+.big-card-venue {
+  margin-bottom: 5px
+}
+
+.big-card-meta-meta-data {
+  font-family: 'Sofia Sans';
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.big-card-date {
+  margin-bottom: 100px
+}
+
+.big-card-registration {
+  display: flex;
+  align-items: center;
+}
+
+.big-card-registration p {
+  margin-left: 7px;
+  color: #42f551;
+  font-weight: bolder;
+}
+
+.big-card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-card-description {
+  font-size: 2rem;
+  height: 120px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+#no-seats {
+  color: yellow;
+}
+
+.register-button {
+  width: 300px;
+  height: 63px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 2rem;
+}
