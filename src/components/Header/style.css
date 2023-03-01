@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Poppins:wght@100;200;700;800&display=swap');
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-left: 20vw;
+  height: 9vh;
+  background-color: black;
+  color: white
+}
+
+.header p {
+  font-size: 70px;
+  font-family: 'Big Shoulders Inline Display', cursive;
+}
