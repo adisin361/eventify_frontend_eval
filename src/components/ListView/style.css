@@ -4,3 +4,12 @@
   margin: 2vh 20vw;
   justify-content: space-between;
 }
+
+.pageLoader {
+  display: flex;
+  font-family: monospace;
+  height: 91vh;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}

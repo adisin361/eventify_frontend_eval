@@ -15,7 +15,7 @@ const ListView = () => {
       });
   }, []);
 
-  return (
+  return events.length !== 0 ? (
     <>
       <div className='list-view'>
         {events.map((eachEvent, index) => (
@@ -23,7 +23,12 @@ const ListView = () => {
         ))}
       </div>
     </>
-  );
+  ) :
+    (
+      <div className='pageLoader'>
+        <p>Loading...</p>
+      </div>
+    );
 };
 
 export default ListView;
