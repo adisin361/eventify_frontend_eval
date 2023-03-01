@@ -3,19 +3,32 @@
 import React from 'react';
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faBookmark, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment-timezone';
-
-// const time = moment(eventDetails.datetime);
-//   const dateTime = time.tz(eventDetails.timezone).format("DD MMM YYYY HH:mm z");
+import makeRequest from '../../utils/makeRequest';
+import { PATCH_EVENT } from '../../constants/apiEndPoints';
+import { useNavigate } from 'react-router-dom';
 const Card = ({ eventData, index }) => {
-
+  const navigate = useNavigate();
+  const [isBookmark, setIsBookmark] = React.useState(eventData.isBookmarked);
   const time = moment(eventData.datetime);
   // eslint-disable-next-line quotes
   const dateTime = time.tz(eventData.timezone).format("DD MMM YYYY HH:mm z");
+
+  const handleBookmark = async () => {
+    await makeRequest(PATCH_EVENT(eventData.id, {
+      data: {
+        isBookmarked: !isBookmark
+      }
+    }), navigate);
+    setIsBookmark(!isBookmark);
+  };
+
   return (
     <>
-      <div className='card'>
+      <div className='card' onClick={() => {
+        navigate(`/${eventData.id}`);
+      }}>
         <img src={eventData.imgUrl}></img>
         <hr width='100%'></hr>
         <div className='card-meta-data'>
@@ -28,10 +41,16 @@ const Card = ({ eventData, index }) => {
 
           <div className='card-buttons'>
             <div className='card-registration'>
-              <FontAwesomeIcon icon={faCheckCircle} size="2x" color='#42f551' />
-              <p>REGISTERED</p>
+              {!eventData.isRegistered && eventData.areSeatsAvailable && <FontAwesomeIcon icon={faCheckCircle} size="2x" color='#42f551' />}
+
+              {!eventData.isRegistered && eventData.areSeatsAvailable && <p>REGISTERED</p>}
+
+              {!eventData.areSeatsAvailable && <FontAwesomeIcon icon={faCircleXmark} size="2x" color='yellow' />}
+
+              {!eventData.areSeatsAvailable && <p id="no-seats">NO SEATS AVAILABLE</p>}
+
             </div>
-            <FontAwesomeIcon icon={faBookmark} size="2x" color='red' />
+            <FontAwesomeIcon icon={faBookmark} size="2x" color={eventData.isBookmarked ? 'red' : 'white'} onClick={handleBookmark} />
           </div>
         </div>
       </div>
