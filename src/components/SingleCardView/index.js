@@ -63,18 +63,18 @@ const SingleCardView = () => {
 
             <div className='big-card-buttons'>
               <div className='big-card-registration'>
-                {!singleCardData.isRegistered && singleCardData.areSeatsAvailable && <FontAwesomeIcon icon={faCheckCircle} size="2x" color='#42f551' />}
+                {!isRegister && singleCardData.areSeatsAvailable && <FontAwesomeIcon icon={faCheckCircle} size="2x" color='#42f551' />}
 
-                {!singleCardData.isRegistered && singleCardData.areSeatsAvailable && <p>REGISTERED</p>}
+                {!isRegister && singleCardData.areSeatsAvailable && <p>REGISTERED</p>}
 
                 {!singleCardData.areSeatsAvailable && <FontAwesomeIcon icon={faCircleXmark} size="2x" color='yellow' />}
 
                 {!singleCardData.areSeatsAvailable && <p id="no-seats">NO SEATS AVAILABLE</p>}
 
               </div>
-              <FontAwesomeIcon icon={faBookmark} size="2x" color={singleCardData.isBookmarked ? 'red' : 'white'} onClick={handleBookmark} />
+              <FontAwesomeIcon icon={faBookmark} size="2x" color={isBookmark ? 'red' : 'white'} onClick={handleBookmark} />
             </div>
-            {singleCardData.areSeatsAvailable && < button className='register-button' onClick={handleRegister}>{singleCardData.isRegistered ? 'REGISTER' : 'UNREGIESTER'}</button>}
+            {singleCardData.areSeatsAvailable && < button className='register-button' onClick={handleRegister}>{isRegister ? 'REGISTER' : 'UNREGIESTER'}</button>}
           </div>
         </div>
       </div>
