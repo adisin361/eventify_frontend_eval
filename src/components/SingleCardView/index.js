@@ -84,7 +84,7 @@ const SingleCardView = () => {
               </div>
               <FontAwesomeIcon icon={faBookmark} size="2x" color={isBookmark ? 'red' : 'white'} onClick={handleBookmark} />
             </div>
-            {singleCardData.areSeatsAvailable && < button className='register-button' onClick={handleRegister}>{isRegister ? 'REGISTER' : 'UNREGIESTER'}</button>}
+            {singleCardData.areSeatsAvailable && < button className='register-button' onClick={handleRegister}>{isRegister ? 'REGISTER' : 'UNREGISTER'}</button>}
           </div>
         </div>
       </div>
