@@ -18,7 +18,10 @@ const SingleCardView = () => {
     makeRequest(GET_EVENT(id))
       .then((response) => {
         console.log(response);
+        console.log(response.isRegistered);
         setSingleCardData(response);
+        setIsBookmark(response.isBookmarked);
+        setIsRegister(response.isRegistered);
       });
   }, []);
 
@@ -63,13 +66,20 @@ const SingleCardView = () => {
 
             <div className='big-card-buttons'>
               <div className='big-card-registration'>
-                {!isRegister && singleCardData.areSeatsAvailable && <FontAwesomeIcon icon={faCheckCircle} size="2x" color='#42f551' />}
+                {!isRegister && singleCardData.areSeatsAvailable &&
+                  <>
+                    <FontAwesomeIcon icon={faCheckCircle} size="2x" color='#42f551' />
+                    <p>REGISTERED</p>
+                  </>
 
-                {!isRegister && singleCardData.areSeatsAvailable && <p>REGISTERED</p>}
+                }
 
-                {!singleCardData.areSeatsAvailable && <FontAwesomeIcon icon={faCircleXmark} size="2x" color='yellow' />}
 
-                {!singleCardData.areSeatsAvailable && <p id="no-seats">NO SEATS AVAILABLE</p>}
+                {!singleCardData.areSeatsAvailable && <>
+                  <FontAwesomeIcon icon={faCircleXmark} size="2x" color='yellow' />
+                  <p id="no-seats">NO SEATS AVAILABLE</p>
+                </>}
+
 
               </div>
               <FontAwesomeIcon icon={faBookmark} size="2x" color={isBookmark ? 'red' : 'white'} onClick={handleBookmark} />
